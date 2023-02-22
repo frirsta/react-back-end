@@ -106,3 +106,16 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+pip install Pillow
+pip install django-cloudinary-storage
+django-admin startproject PROJ_NAME .
+pip install ‘django<4’
+<a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a>
+
+djangorestframework django-cors-headers
+<a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a>
+pip freeze > requirements.txt
+pip install djangorestframework
+
+django-admin startproject name .

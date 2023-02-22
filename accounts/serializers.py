@@ -7,5 +7,5 @@ class AccountsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Account
-        fields = 'id', 'username', 'registration_date', 'updated_date', 'bio',
-        'profile_image', 'owner'
+        fields = ['owner', 'id', 'username', 'registration_date',
+                  'updated_date', 'bio', 'profile_image']

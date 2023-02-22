@@ -9,7 +9,8 @@ class Account(models.Model):
     registration_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     bio = models.TextField(max_length=500)
-    profile_image = models.ImageField(upload_to='react/', default='default_profile')
+    profile_image = models.ImageField(upload_to='react/',
+                                                default='default_profile')
 
     class Meta:
         ordering = ['-registration_date']

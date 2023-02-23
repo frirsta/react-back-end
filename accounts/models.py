@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 
 class Account(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
-    username = models.CharField(max_length=255, )
     registration_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     bio = models.TextField(max_length=500)

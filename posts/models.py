@@ -7,7 +7,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     caption = models.TextField(max_length=250)
-    post_image = models.ImageField(upload_to='react/', blank=False)
+    post_image = models.ImageField(upload_to='react/', blank=True, default="default_post")
 
     class Meta:
         ordering = ['-created_date']

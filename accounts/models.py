@@ -7,7 +7,7 @@ class Account(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     registration_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
-    bio = models.TextField(max_length=500)
+    bio = models.TextField(max_length=500, blank=True)
     profile_image = models.ImageField(upload_to='react/',
                                                 default='default_profile')
 

@@ -1,13 +1,17 @@
 from .models import Post
 from .serializers import PostsSerializer
-from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from drf_api.permissions import OwnerOrReadOnly
 from rest_framework import permissions
 
 
-class PostList(ListAPIView):
+class PostList(ListCreateAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.all()
     serializer_class = PostsSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
 class PostDetail(RetrieveUpdateDestroyAPIView):
@@ -17,12 +21,3 @@ class PostDetail(RetrieveUpdateDestroyAPIView):
     permission_classes = [OwnerOrReadOnly]
     queryset = Post.objects.all()
     serializer_class = PostsSerializer
-
-
-class CreatePostView(CreateAPIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Post
-    serializer_class = PostsSerializer
-    
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)

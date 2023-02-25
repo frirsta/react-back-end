@@ -120,3 +120,6 @@ pip install djangorestframework
 
 django-admin startproject name .
 <a href="https://www.flaticon.com/free-icons/picture" title="picture icons">Picture icons created by Chanut - Flaticon</a>
+
+pip install django-filter
+https://www.django-rest-framework.org/api-guide/filtering/#searchfilter

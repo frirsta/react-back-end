@@ -123,3 +123,6 @@ django-admin startproject name .
 
 pip install django-filter
 https://www.django-rest-framework.org/api-guide/filtering/#searchfilter
+pip install dj-rest-auth
+pip install 'dj-rest-auth[with_social]'
+pip install djangorestframework-simplejwt

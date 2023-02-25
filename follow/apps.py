@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class FollowerConfig(AppConfig):
+class FollowConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'follower'
+    name = 'follow'

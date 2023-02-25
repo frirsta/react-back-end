@@ -1,16 +1,17 @@
 from django.db import IntegrityError
 from rest_framework import serializers
-from .models import Following
+from .models import Follow
 
 
-class FollowingSerializer(serializers.ModelSerializer):
+class FollowSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
-    followed_by = serializers.ReadOnlyField(source='followed.username')
+    account_followed_name = serializers.ReadOnlyField(source='account_followed.username')
 
     class Meta:
-        model = Following
+        model = Follow
         fields = [
-            'id', 'created_date', 'followed', 'owner', 'followed_by'
+            'id', 'created_date', 'account_followed', 'owner',
+            'account_followed_name'
         ]
 
     def create(self, validated_data):

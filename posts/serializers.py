@@ -27,5 +27,5 @@ class PostsSerializer(serializers.ModelSerializer):
         fields = [
             'owner', 'created_date', 'updated_date',
             'caption', 'image', 'profile_image',
-            'is_owner', 'accounts_id'
+            'is_owner', 'accounts_id', 'id'
         ]

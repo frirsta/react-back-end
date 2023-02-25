@@ -19,12 +19,13 @@ class AccountList(ListAPIView):
         account_followed_count=Count('owner__account_followed', distinct=True)
     ).order_by('-registration_date')
     serializer_class = AccountsSerializer
-    filter_backends = [filters.OrderingFilter]
+    filter_backends = [filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = [
         'posts_count',
         'accounts_following_count',
         'account_followed_count',
         ]
+    search_fields = ['owner__username']
 
 
 class AccountDetail(RetrieveUpdateAPIView):

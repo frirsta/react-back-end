@@ -1,11 +1,15 @@
+from rest_framework import permissions
+from rest_framework.generics import (
+    ListCreateAPIView, RetrieveUpdateDestroyAPIView)
+from drf_api.permissions import OwnerOrReadOnly
 from .models import Post
 from .serializers import PostsSerializer
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from drf_api.permissions import OwnerOrReadOnly
-from rest_framework import permissions
 
 
 class PostList(ListCreateAPIView):
+    """
+    Displays a list of all the posts and their information.
+    """
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.all()
     serializer_class = PostsSerializer
@@ -16,7 +20,8 @@ class PostList(ListCreateAPIView):
 
 class PostDetail(RetrieveUpdateDestroyAPIView):
     """
-    Display post detail, and fields where the post can be updated
+    Display post detail.
+    The owner of the post can edit and delete their post here.
     """
     permission_classes = [OwnerOrReadOnly]
     queryset = Post.objects.all()

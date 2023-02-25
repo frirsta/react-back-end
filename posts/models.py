@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 
 class Post(models.Model):
+    """
+    Post model
+    """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)

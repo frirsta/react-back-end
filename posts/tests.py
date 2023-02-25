@@ -4,7 +4,7 @@ from .models import Post
 from django.contrib.auth.models import User
 
 
-class CreatePostTest(APITestCase):
+class PostTest(APITestCase):
     def setUp(self):
         john = User.objects.create_user(username='john', password='1234')
 

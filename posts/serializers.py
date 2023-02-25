@@ -10,12 +10,18 @@ class PostsSerializer(serializers.ModelSerializer):
         source='owner.accounts.profile_image.url')
 
     def validate_post_image(self, value):
+        """
+        Throws error if the image width or height is larger than 4096px
+        """
         if value.size > 1024 * 1024 * 2:
-            raise serializers.ValidationError('Image size larger than 2MB!')
+            raise serializers.ValidationError(
+                'Image size larger than 2MB!')
         if value.post_image.width > 4096:
-            raise serializers.ValidationError('Image width larger than 4096px!')
+            raise serializers.ValidationError(
+                'Image width larger than 4096px!')
         if value.post_image.height > 4096:
-            raise serializers.ValidationError('Image height larger than 4096px!')
+            raise serializers.ValidationError(
+                'Image height larger than 4096px!')
         return value
 
     def get_is_owner(self, obj):

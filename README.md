@@ -130,6 +130,9 @@ pip install django-cloudinary-storage
 pip install Pillow
 pip install ‘django<4’
 pip install "django-phonenumber-field[phonenumberslite]"
+pip3 install dj_database_url==0.5.0 psycopg2
+pip3 install gunicorn django-cors-headers
+
 
 SQLite
 <a href="https://www.flaticon.com/free-icons/creation" title="creation icons">Creation icons created by Freepik - Flaticon</a>

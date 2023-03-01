@@ -7,7 +7,7 @@ class BusinessProfile(models.Model):
     """
     Buisness Profile model
     """
-    owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     business_name = models.CharField(max_length=300)
     business_description = models.TextField(max_length=500)
     phone_number = PhoneNumberField()

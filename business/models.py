@@ -13,8 +13,8 @@ class BusinessProfile(models.Model):
     phone_number = PhoneNumberField()
     registration_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
-    business_image = models.ImageField(upload_to='react/',
-                                                 default='default_business_profile')
+    business_image = models.ImageField(
+        upload_to='react/', default='default_business_profile')
 
     class Meta:
         ordering = ['-registration_date']

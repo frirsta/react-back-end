@@ -95,6 +95,7 @@ INSTALLED_APPS = [
     'likes',
     'follow',
     'business',
+    'contact',
     "phonenumber_field",
 
 ]

@@ -106,8 +106,8 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
-
 pip install Pillow
+
 pip install django-cloudinary-storage
 django-admin startproject PROJ_NAME .
 pip install ‘django<4’
